@@ -31,8 +31,7 @@ Before running the script, you need to configure your credentials and course inf
        CourseInfo(
            name="Course Name",
            course_number=12345,
-           days="Mon Wednes",  
-           time="10:00"
+           section_number=1
        ),
        # Add more courses as needed
    ]
@@ -42,11 +41,7 @@ Before running the script, you need to configure your credentials and course inf
 
 - **name**: Descriptive name for the course (Doesnt have to be accurate)
 - **course_number**: The official course number from PSUT
-- **days**: Day abbreviations as listed in the website
-            - (e.g., "Mon Wednes" for Monday-Wednesday, "Sun Tues Thur" for Tuesday-Thursday)
-            - You HAVE to have it the same as the website, even for blended/online courses
-- **time**: Start and end time in 24-hour format just like the website
-            - (e.g., "9:00 10:00", "9:30 11:00", "21:00 22:00")
+- **section_number**: The section number you want to register for (e.g., 1, 2, 3)
 
 ## Usage
 
