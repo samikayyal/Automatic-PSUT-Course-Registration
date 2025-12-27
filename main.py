@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from typing import List
 
 from selenium import webdriver
+from selenium.common import TimeoutException
 from selenium.common.exceptions import (
     NoSuchElementException,
     StaleElementReferenceException,
@@ -48,6 +49,8 @@ def close_notifications(browser):
         notification_close.click()
     except NoSuchElementException:
         print("No notification close button found, continuing...")
+    except TimeoutException:
+        print("No notification appeared, continuing...")
 
 
 def login(browser, USERNAME: str, PASSWORD: str):
@@ -239,6 +242,8 @@ if __name__ == "__main__":
     USERNAME: str = ""
     PASSWORD: str = ""
 
-    userInfo: List[CourseInfo] = []
+    userInfo: List[CourseInfo] = [
+        
+    ]
 
     main(TIMEOUT, START_TIME, USERNAME, PASSWORD, userInfo)
